@@ -1,45 +1,120 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Campos Shop</title>
-
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
-
+    <title>Campos Shop - Loja de Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <nav>
-  <a href="index.html">Home</a>
-  <a href="jogos.html">Jogos</a>
-  <a href="contato.html">Contato</a>
-</nav>
+    <header>
+      <nav>
+        <div class="nav-brand">🎮 Campos Shop</div>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="jogos.html">Loja</a>
+          <a href="contato.html">Contato</a>
+          <a href="#" class="cart-link" onclick="toggleCarrinho(); return false;">
+            🛒 Carrinho <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
 
-    <h1>Meu site de games</h1>
-    <p id="texto">Esse é meu primeiro site feito por mim.</p>
-  
+    <main>
+      <section class="hero">
+        <h1>Bem-vindo à Campos Shop</h1>
+        <p>Os melhores jogos com os melhores preços! 🎯</p>
+        <a href="jogos.html" class="btn-primary">Explorar Loja</a>
+      </section>
 
-    <button onclick="mudarTexto()">Clique aqui</button>
+      <section class="featured">
+        <h2>Produtos em Destaque</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-image">
+              <img src="fifa.jpg" alt="FIFA">
+            </div>
+            <div class="product-info">
+              <h3>FIFA 2026</h3>
+              <p>Jogo de futebol com gráficos incríveis ⚽</p>
+              <div class="product-footer">
+                <span class="price">R$ 199,90</span>
+                <button onclick="adicionarCarrinho('FIFA 2026', 199.90)" class="btn-add">Adicionar</button>
+              </div>
+            </div>
+          </div>
 
-<script>
-  let mudou = false;
+          <div class="product-card">
+            <div class="product-image">
+              <img src="valorant.jpg" alt="Valorant">
+            </div>
+            <div class="product-info">
+              <h3>Valorant</h3>
+              <p>FPS competitivo e emocionante 🔫</p>
+              <div class="product-footer">
+                <span class="price">Grátis</span>
+                <button onclick="adicionarCarrinho('Valorant', 0)" class="btn-add">Adicionar</button>
+              </div>
+            </div>
+          </div>
 
-  function mudarTexto() {
-    const texto = document.getElementById("texto");
+          <div class="product-card">
+            <div class="product-image">
+              <img src="minecraft.jpg" alt="Minecraft">
+            </div>
+            <div class="product-info">
+              <h3>Minecraft</h3>
+              <p>Sandbox criativo infinito ⛏️</p>
+              <div class="product-footer">
+                <span class="price">R$ 89,90</span>
+                <button onclick="adicionarCarrinho('Minecraft', 89.90)" class="btn-add">Adicionar</button>
+              </div>
+            </div>
+          </div>
 
-    if (mudou === false) {
-      texto.innerText = "FIFA é um dos meus jogos favoritos ⚽🔥";
-      mudou = true;
-    } else {
-      texto.innerText = "Esse é meu primeiro site feito por mim.";
-      mudou = false;
-    }
-  }
-</script>
+          <div class="product-card">
+            <div class="product-image">
+              <img src="forza.jpg" alt="Forza">
+            </div>
+            <div class="product-info">
+              <h3>Forza Horizon 5</h3>
+              <p>Corrida em mundo aberto 🏎️</p>
+              <div class="product-footer">
+                <span class="price">R$ 249,90</span>
+                <button onclick="adicionarCarrinho('Forza Horizon 5', 249.90)" class="btn-add">Adicionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<body>
-      <img src="fifa.jpg" alt="Imagem do jogo" width="300">
-    
-      <br><br>
-<a href="jogos.html">Ver meus jogos favoritos 🎮</a>
+    <!-- Carrinho Flutuante -->
+    <div id="carrinho-modal" class="carrinho-modal hidden">
+      <div class="carrinho-content">
+        <div class="carrinho-header">
+          <h2>Seu Carrinho</h2>
+          <button onclick="toggleCarrinho()" class="close-btn">✕</button>
+        </div>
+        <div id="carrinho-items" class="carrinho-items">
+          <!-- Itens serão adicionados aqui -->
+        </div>
+        <div class="carrinho-footer">
+          <div class="total">
+            <strong>Total: R$ <span id="totalPreco">0.00</span></strong>
+          </div>
+          <button onclick="finalizarCompra()" class="btn-checkout">Finalizar Compra</button>
+          <button onclick="limparCarrinho()" class="btn-clear">Limpar Carrinho</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Campos Shop. Todos os direitos reservados. 🎮</p>
+    </footer>
+
+    <script src="carrinho.js"></script>
+  </body>
+</html>
 
