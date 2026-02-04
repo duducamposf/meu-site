@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campos Shop</title>
+
+    <style>
+  body {
+    background-color: #0f172a;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #020617;
+    padding: 15px;
+  }
+
+  nav a {
+    margin: 0 15px;
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+    </style>
+  </head>
+
+  <body>
+    <nav>
+  <a href="index.html">Home</a>
+  <a href="jogos.html">Jogos</a>
+  <a href="contato.html">Contato</a>
+</nav>
+
+    <h1>Meu site de games</h1>
+    <p id="texto">Esse é meu primeiro site feito por mim.</p>
+  
+
+    <button onclick="mudarTexto()">Clique aqui</button>
+
+<script>
+  let mudou = false;
+
+  function mudarTexto() {
+    const texto = document.getElementById("texto");
+
+    if (mudou === false) {
+      texto.innerText = "FIFA é um dos meus jogos favoritos ⚽🔥";
+      mudou = true;
+    } else {
+      texto.innerText = "Esse é meu primeiro site feito por mim.";
+      mudou = false;
+    }
+  }
+</script>
+
+<body>
+      <img src="fifa.jpg" alt="Imagem do jogo" width="300">
+    
+      <br><br>
+<a href="jogos.html">Ver meus jogos favoritos 🎮</a>
+

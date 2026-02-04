@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contato</title>
+
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #020617;
+      padding: 15px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #22c55e;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      background-color: #020617;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #22c55e;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #16a34a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="jogos.html">Jogos</a>
+    <a href="contato.html">Contato</a>
+  </nav>
+
+  <h1>Contato 📩</h1>
+
+  <div class="container">
+  <form id="formContato">
+    <input type="text" id="nome" placeholder="Seu nome" required>
+    <input type="email" id="email" placeholder="Seu email" required>
+    <textarea id="mensagem" placeholder="Sua mensagem"></textarea>
+
+    <button type="submit">Enviar</button>
+
+    <p id="sucesso" style="display:none; color:#22c55e; margin-top:15px;">
+      ✅ Mensagem enviada com sucesso!
+    </p>
+  </form>
+</div>
+
+
+  <a href="index.html">⬅ Voltar para a página inicial</a>
+
+<script>
+  const form = document.getElementById("formContato");
+  const mensagemSucesso = document.getElementById("sucesso");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // impede recarregar a página
+
+    mensagemSucesso.style.display = "block";
+    form.reset(); // limpa os campos
+  });
+</script>
+
+</body>
+</html>
